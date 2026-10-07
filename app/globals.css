@@ -1,0 +1,257 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #FFFEF7;
+  --color-foreground: #3C2415;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-editorial: "Cormorant Garamond", Georgia, serif;
+  --font-hindi: "Noto Sans Devanagari", sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+
+  /* Luxury colour palette */
+  --color-ivory: #FFFEF7;
+  --color-ivory-warm: #FEFCF3;
+  --color-champagne: #F7E7CE;
+  --color-champagne-light: #FBF2E3;
+  --color-burgundy: #722F37;
+  --color-burgundy-deep: #5A1E25;
+  --color-burgundy-light: #8B3A43;
+  --color-gold: #C9A94E;
+  --color-gold-light: #D4BA6A;
+  --color-gold-dark: #B09240;
+  --color-gold-muted: #D4C5A0;
+  --color-espresso: #3C2415;
+  --color-espresso-light: #5A3A28;
+  --color-beige: #F5F0EB;
+  --color-beige-warm: #EDE5DC;
+  --color-stone: #8B7D6B;
+  --color-stone-light: #A69A8A;
+}
+
+:root {
+  --background: #FFFEF7;
+  --foreground: #3C2415;
+}
+
+/* ─── Base Styles ─── */
+html {
+  font-family: "DM Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #FFFEF7;
+  color: #3C2415;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Selection */
+::selection {
+  background-color: #F7E7CE;
+  color: #3C2415;
+}
+
+/* ─── Custom Styles & Typography ─── */
+.font-serif-display {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.font-editorial {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.font-hindi {
+  font-family: "Noto Sans Devanagari", sans-serif;
+}
+
+.heading-hero {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.heading-section {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.heading-editorial {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.text-subtitle {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* Spacing & Layout */
+.section-padding {
+  padding-top: clamp(4rem, 8vw, 8rem);
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+.section-padding-sm {
+  padding-top: clamp(2rem, 4vw, 4rem);
+  padding-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+.container-luxury {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 4rem);
+  padding-right: clamp(1.25rem, 4vw, 4rem);
+}
+
+/* Accents */
+.line-gold {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A94E, transparent);
+}
+
+.line-gold-left {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, #C9A94E, transparent);
+}
+
+.transition-luxury {
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Luxury Buttons */
+.btn-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: "DM Sans", system-ui, sans-serif;
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+}
+
+.btn-luxury-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: "DM Sans", system-ui, sans-serif;
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+  background-color: #722F37;
+  color: #FFFEF7;
+}
+
+.btn-luxury-primary:hover {
+  background-color: #5A1E25;
+}
+
+.btn-luxury-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: "DM Sans", system-ui, sans-serif;
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+  border: 1px solid rgba(60, 36, 21, 0.2);
+  color: #3C2415;
+}
+
+.btn-luxury-outline:hover {
+  background-color: #3C2415;
+  color: #FFFEF7;
+}
+
+.btn-luxury-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: "DM Sans", system-ui, sans-serif;
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+  background-color: #C9A94E;
+  color: #3C2415;
+}
+
+.btn-luxury-gold:hover {
+  background-color: #B09240;
+}
+
+/* Inputs */
+.input-luxury {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #EDE5DC;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  color: #3C2415;
+  font-family: "DM Sans", system-ui, sans-serif;
+  transition: border-color 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  outline: none;
+}
+
+.input-luxury::placeholder {
+  color: #A69A8A;
+}
+
+.input-luxury:focus {
+  border-bottom-color: #C9A94E;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
